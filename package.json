@@ -1,7 +1,6 @@
 {
-  "name": "code-splitting-in-react-apps-presentation",
+  "name": "building-chrome-extensions-without-pain",
   "version": "1.0.1",
-  "description": "The talk for ReactJS Poznan Meeting",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",

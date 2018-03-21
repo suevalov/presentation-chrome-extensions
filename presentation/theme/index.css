@@ -3,6 +3,18 @@
   transform-origin: center center;
 }
 
+.easter-egg .harold {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: opacity .5s ease-in;
+}
+
+.easter-egg:hover .harold {
+  opacity: 1;
+}
+
 code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   line-height: 1.5;
