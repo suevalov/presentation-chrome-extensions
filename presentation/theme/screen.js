@@ -188,10 +188,10 @@ const screen = (colors, fonts) => {
       },
       heading: {
         h1: {
-          fontSize: "1.5em",
+          fontSize: "2em",
           fontFamily: fonts.secondary,
           lineHeight: 1,
-          fontWeight: 300,
+          fontWeight: 500,
           margin: 0,
           zoom: 1,
         },
@@ -240,7 +240,8 @@ const screen = (colors, fonts) => {
         fontWeight: 300
       },
       listItem: {
-        fontSize: "2.66rem"
+        fontSize: "2.66rem",
+        lineHeight: "1.8em"
       },
       list: {
         textAlign: "left",
