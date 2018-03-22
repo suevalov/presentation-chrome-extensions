@@ -98,11 +98,11 @@ class Presentation extends React.Component {
           </div>
           <Link
             textColor="white"
-            href="http://suevalov.com/talks/chrome-extensions"
+            href="http://suevalov.com/talks"
             target="_blank"
             ref="noopener noreferrer"
           >
-            http://suevalov.com/talks/chrome-extensions
+            http://suevalov.com/talks
           </Link>
         </Slide>
 
