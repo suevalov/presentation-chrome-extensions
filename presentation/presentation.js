@@ -40,7 +40,8 @@ const images = {
   chromeStore: require('../assets/chrome_store.png'),
   operaStore: require('../assets/opera_store.png'),
   types: require('../assets/types.png'),
-  smallText: require('../assets/small_text.gif')
+  smallText: require('../assets/small_text.gif'),
+  extensionsReloader: require('../assets/extension_realoader.png')
 };
 
 preloader(images);
@@ -220,7 +221,7 @@ class Presentation extends React.Component {
             <ListItem>Hard to track what ES features are available</ListItem>
             <ListItem>Manual reload on every change</ListItem>
             <ListItem>Hard to set up communication between modules</ListItem>
-            <ListItem>Hard to E2E tests</ListItem>
+            <ListItem>Hard to do E2E tests</ListItem>
           </List>
         </Slide>
 
@@ -228,46 +229,79 @@ class Presentation extends React.Component {
           <Heading size={1}>💡 Solutions?</Heading>
         </Slide>
 
+        <Slide bgColor="blue" textColor="white">
+          <Link href="https://github.com/suevalov/create-react-chrome-extension" target="_blank">
+            <Heading size={1}>🗜️ <code style={{ color: colors.white }}>create-react-chrome-extension</code></Heading>
+          </Link>
+        </Slide>
+
         <Slide
           transition={[]}
           bgColor="blue"
-          notes={`
-            <ul>
-              <li>It's not that easy to achieve</li>
-            </ul>
-          `}
         >
           <Terminal
             showFirstEntry
             title="1. suevalov@suevalov: ~(zsh)"
             output={[
-              <div>create-react-app just-few-dependencies</div>,
-              <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 100 }}>
-                yarn build
-              </Typist>,
+              <div>npx create-react-chrome-extension my-new-extension</div>,
               <div>
                 <div> </div>
-                <div>Creating an optimized production build...</div>
-                <div style={{ color: colors.green }}>
-                  Compiled successfully.
-                </div>
+                <div>Creating a new Chrome extension in <code style={{ color: colors.green }}>/Users/suevalov/my-new-extension</code>.</div>
+                <div>Installing packages. This might take a couple of minutes.</div>
                 <div> </div>
-                <div>File sizes after gzip:</div>
-                <div>
-                  47.09 KB (151 KB) build/static/js/<span
-                  style={{ color: colors.green }}
-                >
-                    main.8b0e51a6.js
-                  </span>
-                </div>
-                <div>
-                  289 B build/static/css/<span style={{ color: colors.green }}>
-                    main.9a0fe4f1.css
-                  </span>
-                </div>
+              </div>,
+              <div>⌛</div>,
+              <div>
+                <div> </div>
+                <div>Success! Created my-new-extension at <code style={{ color: colors.green }}>/Users/suevalov/my-new-extension</code></div>
+                <div>Inside that directory, you can run several commands:</div>
+                <div> </div>
+                <div><code style={{ color: colors.lightBlue }}>yarn start</code></div>
+                <div>Starts the development server.</div>
+                <div> </div>
+                <div><code style={{ color: colors.lightBlue }}>yarn build</code></div>
+                <div>Bundles the app into static files for production.</div>
+                <div> </div>
+                <div><code style={{ color: colors.lightBlue }}>yarn generate</code></div>
+                <div>Generates modules for your extension.</div>
               </div>
             ]}
           />
+        </Slide>
+
+        <Slide bgColor="green" textColor="white">
+          <List>
+            <ListItem>👍 Hot reload out of the box</ListItem>
+            <ListItem>👍 Generator which helps with configuration</ListItem>
+            <ListItem>👍 Converts JS using browserlist</ListItem>
+          </List>
+        </Slide>
+
+        <Slide bgColor="red" textColor="white">
+          <List>
+            <ListItem>👎 Lack of documentation</ListItem>
+            <ListItem>👎 No eject</ListItem>
+            <ListItem>👎 No tests configuration</ListItem>
+          </List>
+        </Slide>
+
+        <Slide bgColor="#F1F1F1" textColor="white">
+          <Link href="https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid?hl=en" target="_blank">
+            <Image src={images.extensionsReloader.replace("/", "")} width='80%' />
+          </Link>
+        </Slide>
+
+        <Slide
+          bgColor="green"
+          textColor="white"
+        >
+          <Heading size={1}>🤕</Heading>
+          <List>
+            <ListItem><strike>Hard to track what ES features are available</strike></ListItem>
+            <ListItem><strike>Manual reload on every change</strike></ListItem>
+            <ListItem><strong>Hard to set up communication between modules</strong></ListItem>
+            <ListItem>Hard to do E2E tests</ListItem>
+          </List>
         </Slide>
 
 
