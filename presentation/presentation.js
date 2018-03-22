@@ -3,20 +3,13 @@
 import preloader from "spectacle/lib/utils/preloader";
 import CodeSlide from "spectacle-code-slide";
 import Terminal from "spectacle-terminal";
-import Typist from "react-typist";
 import React from "react";
 import {
-  CodePane,
   Deck,
   Heading,
   Link,
   Slide,
-  Layout,
-  Fill,
   Image,
-  BlockQuote,
-  Quote,
-  Cite,
   List,
   ListItem
 } from "spectacle";
@@ -41,7 +34,11 @@ const images = {
   operaStore: require('../assets/opera_store.png'),
   types: require('../assets/types.png'),
   smallText: require('../assets/small_text.gif'),
-  extensionsReloader: require('../assets/extension_realoader.png')
+  extensionsReloader: require('../assets/extension_realoader.png'),
+  redux: require('../assets/redux.png'),
+  chromeRedux: require('../assets/chrome_redux.png'),
+  puppeeter: require('../assets/puppeteer.png'),
+  haroldHappy: require('../assets/happy_harold.gif')
 };
 
 preloader(images);
@@ -62,7 +59,7 @@ const theme = createTheme(
     lightBlue: colors.lightBlue,
     red: colors.red,
     violet: colors.violet,
-    yellow: colors.yellow
+    yellow: colors.yellow,
   },
   {
     primary: fonts.Lato,
@@ -304,6 +301,62 @@ class Presentation extends React.Component {
           </List>
         </Slide>
 
+        <Slide bgColor="#F1F1F1" textColor="white">
+          <div>
+            <Image src={images.chromium.replace("/", "")} width='30%' />
+            <Image src={images.redux.replace("/", "")} width='60%' />
+          </div>
+        </Slide>
+
+        <Slide bgColor="blue" textColor="white">
+          <Link href="https://github.com/tshaddix/react-chrome-redux" target="_blank">
+            <Heading size={1}>💪 <code style={{ color: colors.white }}>react-chrome-redux</code></Heading>
+          </Link>
+        </Slide>
+
+        <Slide bgColor="white">
+          <Link href="https://github.com/tshaddix/react-chrome-redux" target="_blank">
+            <Image src={images.chromeRedux.replace("/", "")} width='100%' />
+          </Link>
+        </Slide>
+
+        <Slide
+          bgColor="green"
+          textColor="white"
+        >
+          <Heading size={1}>🤕</Heading>
+          <List>
+            <ListItem><strike>Hard to track what ES features are available</strike></ListItem>
+            <ListItem><strike>Manual reload on every change</strike></ListItem>
+            <ListItem><strike>Hard to set up communication between modules</strike></ListItem>
+            <ListItem><strong>Hard to do E2E tests</strong></ListItem>
+          </List>
+        </Slide>
+
+        <Slide bgColor="white">
+          <Link href="https://github.com/GoogleChrome/puppeteer" target="_blank">
+          <Image src={images.puppeeter.replace("/", "")} width='30%' />
+          </Link>
+        </Slide>
+
+        <Slide
+          bgColor="green"
+          textColor="white"
+        >
+          <Heading size={1}>😀</Heading>
+          <List>
+            <ListItem><strike>Hard to track what ES features are available</strike></ListItem>
+            <ListItem><strike>Manual reload on every change</strike></ListItem>
+            <ListItem><strike>Hard to set up communication between modules</strike></ListItem>
+            <ListItem><strike>Hard to do E2E tests</strike></ListItem>
+          </List>
+        </Slide>
+
+        <Slide bgColor="black" textColor="white" bgImage={images.haroldHappy.replace("/", "")}>
+          <div>
+            <Heading size={1}>Less pain, more fun!</Heading>
+          </div>
+        </Slide>
 
         <Slide
           transition={["fade"]}
